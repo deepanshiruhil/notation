@@ -1,0 +1,157 @@
+.latex-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.latex-header {
+  height: 70px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: 'Computer Modern', 'CMU Serif', 'Latin Modern Roman', Georgia, serif;
+  transition: all 0.3s ease;
+  color: #8b8b8b;
+  font-weight: 500;
+  outline: none;
+}
+
+.tab:hover {
+  color: #333333;
+}
+
+.tab:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.tab.active {
+  color: #333333;
+}
+
+.latex-content {
+  flex: 1;
+  overflow: hidden;
+  padding: 0;
+}
+
+.rendered-view {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rendered-view .loading,
+.rendered-view .error {
+  padding: 2rem;
+  text-align: center;
+}
+
+.rendered-view .error {
+  color: #dc3545;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+.rendered-view .react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rendered-view .react-pdf__Page {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.rendered-view .react-pdf__Page:hover {
+  transform: scale(1.01);
+}
+
+.rendered-view .react-pdf__Page canvas {
+  display: block;
+}
+
+/* Hide page numbers */
+.react-pdf__Page__pageNumber {
+  display: none !important;
+}
+
+.raw-view {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #333333;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: 'Computer Modern', 'CMU Serif', 'Latin Modern Roman', Georgia, serif;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.copy-button:hover {
+  background: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.latex-code {
+  margin: 0;
+  padding: 1rem;
+  background: rgba(248, 249, 250, 0.5);
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.latex-code code {
+  color: #495057;
+}

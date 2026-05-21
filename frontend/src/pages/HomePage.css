@@ -1,0 +1,237 @@
+.home-page {
+  min-height: 100vh;
+  background: #f9f9f9;
+  background-image: radial-gradient(circle, #d8d8d8 1.1px, transparent 1.1px);
+  background-size: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.content-wrapper {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Computer Modern', 'CMU Serif', 'Latin Modern Roman', Georgia, serif;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 0 2rem 0;
+  color: #000000;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  font-family: 'Computer Modern', 'CMU Serif', 'Latin Modern Roman', Georgia, serif;
+  font-size: 1.1rem;
+  color: #000000;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upload-area {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.upload-link-container {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.upload-link-container:hover {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 15px rgba(0, 0, 0, 0.1));
+}
+
+.upload-link-container svg {
+  max-width: 200px;
+  height: auto;
+}
+
+.loading-text {
+  font-family: 'Computer Modern', 'CMU Serif', 'Latin Modern Roman', Georgia, serif;
+  font-size: 1.2rem;
+  color: #666666;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  margin-top: -1rem;
+}
+
+.loading-dots {
+  display: inline-flex;
+  margin-left: 0.2rem;
+}
+
+.loading-dots span {
+  animation: loading-fade 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading-fade {
+  0%, 80%, 100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.error-message {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fee;
+  color: #c33;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-bar {
+  position: absolute;
+  bottom: 2.8rem;
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Computer Modern', 'CMU Serif', 'Latin Modern Roman', Georgia, serif;
+  font-size: 0.9rem;
+  color: #666666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  outline: none;
+}
+
+.nav-item:focus {
+  outline: none;
+}
+
+.nav-item .nav-text {
+  font-weight: 500;
+  white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.nav-item.expanded {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333333;
+  padding: 0.6rem 1rem;
+}
+
+.nav-item.expanded .nav-text {
+  max-width: 100px;
+  opacity: 1;
+  margin-left: 0.25rem;
+}
+
+/* Floating Notes Positioning */
+.floating-note-1 {
+  top: 10%;
+  left: 7%;
+  width: 220px;
+  height: 270px;
+}
+
+.floating-note-2 {
+  top: 10%;
+  right: 7%;
+  width: 220px;
+  height: 270px;
+}
+
+.floating-note-3 {
+  bottom: 15%;
+  left: 7%;
+  width: 220px;
+  height: 270px;
+}
+
+.floating-note-4 {
+  bottom: 15%;
+  right: 7%;
+  width: 220px;
+  height: 270px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+  .floating-note-1,
+  .floating-note-2,
+  .floating-note-3,
+  .floating-note-4 {
+    width: 180px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .floating-note-1,
+  .floating-note-2,
+  .floating-note-3,
+  .floating-note-4 {
+    width: 130px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .floating-note-1,
+  .floating-note-2,
+  .floating-note-3,
+  .floating-note-4 {
+    display: none;
+  }
+}
